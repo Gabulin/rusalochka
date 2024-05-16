@@ -1,0 +1,287 @@
+.cookbook__title-text {
+    color: var(--black);
+    font-family: var(--third-family);
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    padding: 25px;
+    
+    &.recipe {
+        z-index: 2;
+        text-align: left;
+        max-width: 30%;
+        color: var(--white);
+        position: absolute;
+        top: 4%;
+        left: 2%;
+
+        @media (max-width:1920px) {
+            font-size: calc(48px - 0.5vw);
+        }
+        @media (max-width:1080px) {
+            font-size: calc(48px - 0.7vw);
+        }
+        @media (max-width:767px) {
+            font-size: calc(48px - 4vw);
+        }
+        @media (max-width:460px) {
+            font-size: calc(48px - 6vw);
+            max-width: 50%;
+        }
+        @media (max-width:340px) {
+            max-width: 70%;
+            font-size: calc(48px - 8vw);
+        }
+    }
+}
+
+.cookbook__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 100px;
+
+    @media (max-width:1080px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    @media (max-width:767px) {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+    }
+    
+}
+
+.cookbook__grid_item {
+    position: relative;
+    text-align: center;
+    border-radius: 50px;
+    overflow: hidden;
+    height: 100%;
+    max-height: 489px;
+
+    &:hover {
+        img {
+            transition: .2s ease;
+            transform: scale(1.1);
+        }
+        .cookbook__grid_item-info {
+            transition: 0.2s ease;
+            color: #ffffff;
+            background-color: var(--orange);
+            border-color: var(--orange);
+        }
+    }
+
+    @media (max-width:1080px) {
+        max-height: 334px;
+    }
+    @media (max-width:767px) {
+        height: 334px;
+    }
+}
+.cookbook_fader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(102, 102, 102, 0.5);
+}
+.cookbook__grid_item img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    object-position: center;
+}
+
+.cookbook__grid_item-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(102, 102, 102, 0.5);
+    &.swiper-overlay {
+        z-index: 2;
+    } 
+}
+
+.cookbook__grid_item-text {
+    width: 60%;
+    position: absolute;
+    left: 7%;
+    bottom: 8%;
+    font-family: var(--font-family);
+    color: var(--white);
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: left;
+
+
+    @media (max-width:1920px) {
+        font-size: calc(32px - 0.5vw);
+    }
+    @media (max-width:1080px) {
+        font-size: calc(32px - 0.7vw);
+    }
+    @media (max-width:767px) {
+        font-size: calc(32px + 0.5vw);
+    }
+    @media (max-width:460px) {
+        font-size: calc(32px - 2vw);
+    }
+    @media (max-width:340px) {
+        font-size: calc(32px - 4vw);
+    }
+}
+
+.cookbook__grid_item-info {
+    position: absolute;
+    right: 7%;
+    bottom: 9%;
+    color: var(--white);
+    font-family: var(--font-family);
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: left;
+    border: 1px solid rgb(254, 254, 254);
+    border-radius: 81px;
+    padding: 15px 20px 15px 25px;
+    & p {
+        margin: 0;
+    }
+    &:hover {
+            transition: 0.2s ease;
+            color: #ffffff;
+            background-color: var(--orange);
+            border-color: var(--orange);
+        
+
+    }
+    &.recipe {
+        z-index: 2;
+        display: flex;
+        gap: 10px;
+        right: auto;
+        position: absolute;
+        left: 3%;
+        bottom: 4%;
+
+       
+        @media (max-width:1920px) {
+            font-size: calc(20px - 0.1vw);
+            padding: 10px 15px 10px 20px;
+        }
+        @media (max-width:560px) {
+            left: 6%;
+            font-size: calc(20px - 2vw);
+            padding: 5px 10px 5px 15px;
+        }
+        @media (max-width:320px) {
+            left: 6%;
+            font-size: calc(20px - 3vw);
+            padding: 5px 10px 5px 15px;
+        }
+    }
+
+    @media (max-width:1920px) {
+        font-size: calc(20px - 0.1vw);
+        padding: 10px 15px 10px 20px;
+    }
+    @media (max-width:460px) {
+        font-size: calc(20px - 2vw);
+        padding: 5px 10px 5px 15px;
+    }
+}
+
+.cookbook-slide {
+    border-radius: 50px;
+    overflow: hidden;
+    &:hover {
+        .cookbook__grid_item-info {
+            transition: 0.2s ease;
+            color: #ffffff;
+            background-color: var(--orange);
+            border-color: var(--orange);
+        }
+    }
+}
+
+.cookbook-swiper {
+    position: relative;
+    border-radius: 50px;
+    overflow: hidden;
+    margin-bottom: 75px;
+}
+
+.cookbook-item_pic {
+    position: relative;
+}
+.cookbook-item-content {
+    margin-top: 107px;
+}
+
+.cookbook-swiper .swiper-slide img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    object-position: center;
+
+    @media (max-width:767px) {
+        height: 40vh;
+    }
+}
+
+
+.cookbook__slide-button {
+    border-color: var(--white);
+    background-color: rgba(255, 255, 255, 0);
+    width: 20px;
+    height: 20px;
+    &::after {
+        content: "";
+        width: 15px;
+        height: 10px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: 0.2s ease;
+    }
+    &:hover {
+        background-color: none;
+        border-color: var(--white);
+        transition: 0.2s ease;
+    }
+}
+.cookbook__slide-button:hover {
+    background-color: var(--white);
+}
+@media (hover: none) {
+    .cookbook__slide-button:hover {
+        background-color: rgba(255, 255, 255, 0);;
+    }
+}
+.cookbook__slide-button.active {
+    background-color: var(--white);
+}
+
+.cookbook-item__swiper_navigation {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 90%;
+    z-index: 2;
+}
+
+.cookbook_others {
+    background: rgb(241, 241, 241);
+    padding: 100px 0;
+
+    margin-bottom: 100px;
+}
