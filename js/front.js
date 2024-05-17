@@ -297,6 +297,50 @@ new Swiper(".blog-item-page-swiper", {
 		prevEl: ".blog-item-page-swiper-button-prev",
 	},
 });
+new Swiper(".history-slider", {
+	slidesPerView: 4,
+	slidesPerGroup: 1,
+	speed: 1000,
+	simulateTouch: true,
+	touchReleaseOnEdges: true,
+	watchOverflow: true,
+	pagination: {
+		el: ".history-slider-pagination",
+		clickable: "true",
+	},
+	breakpoints: {
+		
+		2560: {
+			slidesPerView: 5,
+		},
+		1921: {
+			slidesPerView: 5,
+		},
+		1660: {
+			slidesPerView: 5,	
+		},
+		1440: {
+			slidesPerView: 3,
+		},
+		1024: {
+			slidesPerView: 2,
+		},
+		991: {
+			slidesPerView: 2,
+			
+		},
+		767: {
+			slidesPerView: 2,
+		},
+		567: {
+			slidesPerView: 1,
+		},
+		0: {
+			slidesPerView: 1,
+			
+		},
+	}
+});
 
 //Параметры для типового слайдера с карточками товаров
 let productSliderParams = {
@@ -351,6 +395,8 @@ let productSliderParams = {
 		},
 	},
 };
+
+
 
 //Заменяем параметры навигационных кнопок для слайдера с топовыми товарами на главной и инициализируем слайдер
 productSliderParams.navigation.nextEl = ".top-product-swiper-button-next";

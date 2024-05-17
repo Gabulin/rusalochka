@@ -10,13 +10,82 @@
     display: flex;
     align-items: center;
     gap: 30px;
+    flex-wrap: wrap;
+    &.about {
+        align-items: flex-start;
+        gap: 50px;
+        @media (max-width:991px) {
+            flex-direction: column-reverse;
+        }
+    }
     &.inform {
         align-items: flex-start;
+        @media (max-width:767px) {
+            flex-direction: column;
+        }
     }
     @media (max-width:767px) {
         margin-top: 20px;
         flex-direction: column-reverse;
         align-items: flex-start;
+    }
+}
+
+.info-content-item {
+    position: relative;
+    height: 736px;
+    @media (min-width:992px) and (max-width:2559px) {
+        height: calc(736px - 10vw);
+    }
+    @media (max-width:992px) {
+       height: 492px;
+    }
+    @media (min-width:390px) and (max-width:750px) {
+        height: calc(492px - 20vw);
+     }
+     @media (min-width:0px) and (max-width:390px) {
+        height: calc(492px - 70vw);
+     }
+}
+
+.info-content_img {
+    position: absolute;
+    &.one {
+        width: 300px;
+        height: 300px;
+        top: 0;
+        left: 0;
+        z-index: 1;
+
+        @media (max-width:1920px) {
+            width: 200px;
+            height: 200px;
+        }
+        @media (max-width:1400px) {
+            width: 150px;
+            height: 150px;
+        }
+        @media (max-width:992px) {
+            top: 50%;
+            left: 50%;
+        }
+    }
+    &.two {
+        right: 0;
+        bottom: 0;
+        height: 90%;
+        width: 80%;
+        border-radius: 40px;
+        filter: contrast(0.5);
+        object-fit: cover;
+        object-position: center;
+
+    @media (max-width:992px) {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        filter: contrast(1);
+    }
     }
 }
 
@@ -86,12 +155,36 @@ text-align: left;
     flex-direction: row;
     justify-content: center;
     align-content: center;
-    max-width: 540px;
+    width: 540px;
+    @media (max-width:540px) {
+        width: 100%;
+    }
+    &.about {
+        width: auto;
+        
+    }
 }
+.icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
 .info_icon-text {
     margin: auto 0;
 }
 
 .map_info {
-    margin-top: 100px;
+    margin: 100px auto auto 30px;
+    width: 825px;
+    height: 624px;
+    overflow: hidden;
+    @media (max-width: 990px) {
+        width: 90%;;
+        height: 400px;
+    }
+    @media (max-width: 767px) {
+        width: 90%;;
+        height: 462px;
+    }
 }
