@@ -56,6 +56,11 @@
         top: 0;
         left: 0;
         z-index: 1;
+        transition: 0.5s;
+
+        &:hover {
+            transform: rotate(90deg);
+        }
 
         @media (max-width:1920px) {
             width: 200px;
@@ -161,7 +166,17 @@ text-align: left;
     }
     &.about {
         width: auto;
-        
+        position: relative;
+        &:hover {
+            p {
+                color: rgb(0, 164, 223);
+                transition: 0.2s ease;
+            }
+            img {
+                transition: .2s ease;
+            transform: scale(1.1);
+            }
+        }
     }
 }
 .icon {

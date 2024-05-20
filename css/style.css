@@ -6556,6 +6556,10 @@ a {
   top: 0;
   left: 0;
   z-index: 1;
+  transition: 0.5s;
+}
+.info-content_img.one:hover {
+  transform: rotate(90deg);
 }
 @media (max-width: 1920px) {
   .info-content_img.one {
@@ -6670,6 +6674,15 @@ a {
 }
 .info_icon.about {
   width: auto;
+  position: relative;
+}
+.info_icon.about:hover p {
+  color: rgb(0, 164, 223);
+  transition: 0.2s ease;
+}
+.info_icon.about:hover img {
+  transition: 0.2s ease;
+  transform: scale(1.1);
 }
 
 .icon {
@@ -6845,6 +6858,73 @@ a {
   line-height: 100%;
   letter-spacing: 0%;
   text-align: left;
+}
+
+.quality-control {
+  margin-bottom: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.conrol-link {
+  line-height: 19px;
+}
+
+.cookbook__title-text.about {
+  text-align: left;
+  max-width: 620px;
+  padding-left: 0;
+}
+
+.about__address {
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+@media (max-width: 1920px) {
+  .about__address {
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+
+.about__address-item {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+@media (max-width: 1920px) {
+  .about__address-item {
+    width: 100%;
+  }
+}
+
+.adress-item {
+  max-width: 392px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+@media (min-width: 767px) and (max-width: 1500px) {
+  .adress-item {
+    gap: 50px;
+    flex-direction: row;
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 1921px) {
+  .about-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
 }
 
 .breadcrumbs {
@@ -7128,7 +7208,6 @@ a {
   font-family: var(--font-family);
   font-weight: 300;
   font-size: 20px;
-  line-height: 0%;
   color: var(--black);
   border: 1px solid var(--black);
   border-radius: 81px;

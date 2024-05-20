@@ -123,3 +123,64 @@
     letter-spacing: 0%;
     text-align: left;
 }
+
+.quality-control {
+    margin-bottom: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.conrol-link {
+    line-height: 19px;
+}
+.cookbook__title-text {
+    &.about {
+        text-align: left;
+        max-width: 620px;
+        padding-left: 0;
+    }
+}
+.about__address {
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    @media (max-width:1920px) {
+        flex-direction: column;
+        gap: 50px;
+    }
+}
+
+.about__address-item {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    @media (max-width:1920px) {
+        width: 100%;
+    }
+}
+
+.adress-item {
+    max-width: 392px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    @media (min-width:767px) and (max-width:1500px) {
+        gap: 50px;
+        flex-direction: row;
+        max-width: 90%;
+    }
+}
+
+.about-link {
+    @media (min-width:1921px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+}
