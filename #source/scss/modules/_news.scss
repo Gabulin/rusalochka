@@ -1,9 +1,14 @@
 .news__container {
-    max-width: 1656px;
     margin: 100px auto;
 
     @media (min-width: 1200px) and (max-width: 1920px) {
         max-width: 80%;
+    }
+    @media (max-width: 991px) {
+        margin: 30px auto;
+    }
+    @media (max-width: 768px) {
+        margin: 15px auto;
     }
 }
 
@@ -26,44 +31,40 @@
     flex-direction: row;
     gap: 17px;
     justify-content: center;
-
-    @media (max-width: 1550px) {
-        margin-top: 10px;
-    }
+    align-items: center;
 
     @media (max-width: 612px) {
+        gap: 0px;
         flex-direction: column;
+        align-items: start;
     }
 }
 
-.news__socials-title,
-.news__socials_block-title {
-    letter-spacing: 0%;
-text-align: left;
+.socials {
+    svg {
+        @media (max-width:768px) {
+            width: 30px;
+            height: 30px;
+        }
+        @media (max-width:391px) {
+            width: 20px;
+            height: 20px;
+        }
+    }
+    @media (max-width:991px) {
+        display: flex;
+        gap: 10px;
+    }
 }
 
-.news__socials-title {
-    font-family: var(--third-family);
-font-size: 48px;
-font-weight: 400;
-line-height: 100%;
-
-}
-
-.news__socials_block-title {
-    font-family: var(--font-family);
-font-size: 24px;
-font-weight: 700;
-line-height: 29px;
-
-}
 .news-block {
+    justify-content: center;
   margin: 0;
   display: flex;
-  flex-direction: row;
   gap: 35px;
   flex-wrap: wrap;
   @media (max-width: 991px) {
+    gap: 0px;
     flex-direction: column;
 }
 }
@@ -73,42 +74,110 @@ line-height: 29px;
   width: 100%;
   max-width: 813px;
   flex: 1 1 calc(50% - 17.5px); 
-}
-
-
-.news-title,
-.news-date,
-.news-description {
-  color: var(--gray-65);
-  font-family: var(--font-family);
-  text-align: left;
-  letter-spacing: 0%;
-}
-
-.news-date {
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 120%;
-
-}
-.news-title {
-  font-size: 36px;
-  font-weight: 500;
-  line-height: 43px;
-
-  @media (max-width:1920px) {
-    font-size: calc(36px - 0.1vw);
+  @media (max-width: 768px) {
+    margin-bottom: 10px;
 }
 }
-.news-description {
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 24px;
-}
-
 
 .news-pagination {
     display: flex;
     justify-content: center;
     margin-bottom: 100px;
+}
+
+/*Текст */
+.news__socials {
+    h2 {
+        letter-spacing: 0%;
+        text-align: left;
+        font-family: var(--third-family);
+        font-size: 3rem; /* 48px */
+        font-weight: 400;
+        line-height: 100%;
+        @media (max-width: 1920px) {
+            font-size: 2.8rem;
+        }
+        @media (max-width: 1080px) {
+            font-size: 2.6rem;
+        }
+        @media (max-width: 767px) {
+            font-size: 3rem;
+        }
+        
+        @media (max-width: 460px) {
+            font-size: 2.5rem;
+        }
+        @media (max-width: 390px) {
+            font-size: 2rem;
+        }
+        @media (max-width: 310px) {
+            font-size: 1.5rem;
+        }
+    }
+    p {
+        letter-spacing: 0%;
+        text-align: left;
+        font-family: var(--font-family);
+        font-size: 1.5rem; /* 24px */
+        font-weight: 700;
+        line-height: 1; /* 29px */
+        margin: 0;
+
+        @media (max-width:991px) {
+            font-size: 1rem;
+            margin-bottom: 0.5rem; /* 20px / 16px */
+        }
+        @media (max-width:540px) {
+            font-size: 1rem;
+            margin-bottom: 0.5rem; /* 20px / 16px */
+        }
+    }
+}
+
+.news-item {
+    span,
+    h3,
+    p {
+        color: var(--gray-65);
+        font-family: var(--font-family);
+        text-align: left;
+        letter-spacing: 0%;
+        
+    }
+    span {
+        font-size: 1rem; /* 16px */
+        font-weight: 500;
+        line-height: 1.2rem; /* 120% of 16px */
+    }
+    h3 {
+        font-size: 2.25rem; /* 36px */
+        font-weight: 500;
+        line-height: 2.65rem; /* 43px */
+
+        @media (max-width:1400px) {
+            margin: 0.5rem 0;
+        }
+        @media (max-width:1200px) {
+            font-size: 1.75rem; /* 28px / 16px */
+            line-height: 1; 
+        }
+        @media (max-width:991px) {
+            font-size: 1.5rem; /* 24px / 16px */
+        }
+        @media (max-width:550px) {
+            font-size: 1rem; /* 16px / 16px */
+        }
+    }
+    p {
+        font-size: 1.25rem; /* 20px */
+        font-weight: 400;
+        line-height: 1.5rem; /* 24px */
+        @media (max-width:991px) {
+            line-height: 1;
+            font-size: 1rem;
+        }
+        @media (max-width:540px) {
+            font-size: 0.8rem;
+        }
+    }
 }

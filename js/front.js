@@ -297,6 +297,8 @@ new Swiper(".blog-item-page-swiper", {
 		prevEl: ".blog-item-page-swiper-button-prev",
 	},
 });
+
+//История
 new Swiper(".history-slider", {
 	slidesPerView: 4,
 	slidesPerGroup: 1,
@@ -341,7 +343,83 @@ new Swiper(".history-slider", {
 		},
 	}
 });
-
+// Кулинарная книга
+(function() {
+    const slideButtons = document.querySelectorAll('.cookbook__slide-button');
+    
+    const swiper = new Swiper(".cookbook-swiper", {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      speed: 1000,
+      simulateTouch: true,
+      touchReleaseOnEdges: true,
+      spaceBetween: 0,
+      watchOverflow: true,
+      on: {
+        init: function() {
+          setActiveButton(0);
+        },
+        slideChange: function() {
+          setActiveButton(this.activeIndex);
+        }
+      }
+    });
+  
+    function setActiveButton(index) {
+      document.querySelectorAll('.cookbook__slide-button.active').forEach(function(button) {
+        button.classList.remove('active');
+      });
+      if (slideButtons[index]) {
+        slideButtons[index].classList.add('active');
+      }
+    }
+  
+    slideButtons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        const slideIndex = parseInt(button.getAttribute('data-slide-index'), 10);
+        swiper.slideTo(slideIndex);
+      });
+    });
+  })();
+  
+  // Слайдер на новости
+  (function() {
+    const slideButtons = document.querySelectorAll('.news__slide-button');
+    
+    const swiper = new Swiper(".news-swiper", {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      speed: 1000,
+      simulateTouch: true,
+      touchReleaseOnEdges: true,
+      spaceBetween: 0,
+      watchOverflow: true,
+      on: {
+        init: function() {
+          setActiveButton(0);
+        },
+        slideChange: function() {
+          setActiveButton(this.activeIndex);
+        }
+      }
+    });
+  
+    function setActiveButton(index) {
+      document.querySelectorAll('.news__slide-button.active').forEach(function(button) {
+        button.classList.remove('active');
+      });
+      if (slideButtons[index]) {
+        slideButtons[index].classList.add('active');
+      }
+    }
+  
+    slideButtons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        const slideIndex = parseInt(button.getAttribute('data-slide-index'), 10);
+        swiper.slideTo(slideIndex);
+      });
+    });
+  })();
 //Параметры для типового слайдера с карточками товаров
 let productSliderParams = {
 	slidesPerView: 5.5,
